@@ -6,7 +6,9 @@
   "scripts": {
     "build": "webpack",
     "serve": "serve build",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "",
   "license": "ISC",
@@ -33,6 +35,7 @@
     "jquery": "^3.5.1",
     "jquery-appear-original": "^0.6.2",
     "serve": "^11.3.1",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "gh-pages": "^2.2.0"
   }
 }
