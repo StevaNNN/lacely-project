@@ -1,0 +1,107 @@
+/****************************************************************
+ *
+ * CSS Percentage Circle
+ * Author: Andre Firchow
+ *
+*****************************************************************/
+// VARS
+$circle-width: 0.08em;
+$circle-width-hover: 0.04em;
+
+// colors default
+$primary-color: $accent;
+$secondary-color: #ccc;
+$bg-color: #fff;
+
+$primary-color-green: #4db53c;
+
+// CIRCLE
+// classes 2 extend
+.rect-auto {
+	clip: rect(auto, auto, auto, auto);
+}
+
+.pie {
+	position: absolute;
+	border: $circle-width solid $primary-color;
+	background-color: $primary-color;
+	z-index: 1;
+	width: 1 - (2 * $circle-width);
+	height: 1 - (2 * $circle-width);
+	clip: rect(0em, 0.5em, 1em, 0em);
+	border-radius: 50%;
+	transform: rotate(0deg);
+}
+
+.pie-fill {
+	transform: rotate(180deg);
+}
+
+// main
+.c100 {
+	position: relative;
+	font-size: 326px;
+	width: 1em;
+	height: 1em;
+	border-radius: 50%;
+	background-color: transparent;
+
+	*,
+	*:before,
+	*:after {
+		box-sizing: content-box;
+	}
+
+	// background inside the circle
+	&:after {
+		position: absolute;
+		top: $circle-width;
+		left: $circle-width;
+		display: block;
+		content: " ";
+		border-radius: 50%;
+		background-color: transparent;
+		width: 1 - (2 * $circle-width);
+		height: 1 - (2 * $circle-width);
+		transition: all 0.2s ease-in;
+	}
+
+	// the slice (mask)
+	.slice {
+		position: absolute;
+		width: 1em;
+		height: 1em;
+		clip: rect(0em, 1em, 1em, 0.5em);
+	}
+
+	// circle to show the status
+	.bar {
+		@extend .pie;
+	}
+
+
+	// loop to create all needed elements automatically
+	@for $j from 51 through 100 {
+
+		&.p#{$j} .slice {
+			@extend .rect-auto;
+		}
+
+		&.p#{$j} .bar:after{
+			@extend .pie-fill;
+		}
+
+		&.p#{$j} .fill{
+			@extend .pie;
+			@extend .pie-fill;
+		}
+
+	}
+
+	// loop to rotate all 100 circles
+	@for $j from 1 through 20 {
+		&.p#{$j} .bar {
+			transform: rotate((360/100*$j) + deg);
+		}
+	}
+}

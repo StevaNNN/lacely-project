@@ -1,0 +1,74 @@
+svg {
+    width: 140px;
+    height: 90px;
+    cursor: pointer;
+    transform: translate3d(0, 0, 0);
+}
+
+path {
+    fill: none;
+    transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+    stroke-width: 20px;
+    stroke: #000000;
+    border-radius: 16px;
+    stroke-dashoffset: 0;
+}
+
+path#top,
+path#bottom {
+    stroke-dasharray: 240px 950px;
+}
+
+path#middle {
+    stroke-dasharray: 240px 240px;
+}
+
+.cross path#top,
+.cross path#bottom {
+    stroke-dashoffset: -650px;
+    stroke-dashoffset: -650px;
+    stroke: #000000;
+}
+
+.cross path#middle {
+    stroke-dashoffset: -115px;
+    stroke-dasharray: 1px 220px;
+}
+
+.navigation-is-open div.main {
+    transform: translateY(100%);
+}
+
+.navi-trigger {
+    position: fixed;
+    z-index: 3;
+    top: 40px;
+    right: 160px;
+
+    @media screen and (min-width: 1025px) {
+        display: none;
+    }
+}
+
+
+
+.navi-trigger .navi-icon::before,
+.navi-trigger .navi-icon:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.navi-trigger svg {
+    position: absolute;
+    top: -15px;
+    left: 19px;
+
+    @media screen and (max-width: 768px) {
+        height: $header-reduced-height;
+        top: -40px;
+    }
+}

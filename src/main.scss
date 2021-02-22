@@ -1,0 +1,35 @@
+@import "sass/abstract/variables";
+@import "sass/abstract/functions";
+@import "sass/abstract/mixins";
+@import "sass/abstract/helpers";
+
+//@include material-icons-mixin;
+@include font-mixin;
+
+@import "sass/shared/normalized";
+@import "sass/shared/animations";
+@import "sass/shared/icons";
+@import "sass/shared/shared";
+@import "sass/shared/circle";
+
+@import "sass/layout/header/header";
+@import "sass/layout/main/main";
+
+@import "sass/components/nav";
+@import "sass/components/hamburger-menu";
+@import "sass/components/secondary-hambuerger";
+@import "sass/components/sidemenu";
+@import "sass/components/btn";
+
+@import "sass/sections/hero";
+@import "sass/sections/was-wir-tun";
+@import "sass/sections/markenidee";
+@import "sass/sections/produkte";
+@import "sass/sections/mission";
+@import "sass/sections/vision";
+@import "sass/sections/hintergrund";
+@import "sass/sections/wertschopfung";
+@import "sass/sections/kontakt";
+
+@import "sass/slick.css";
+@import "sass/slick-theme.css";

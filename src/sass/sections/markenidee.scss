@@ -1,0 +1,102 @@
+.section.markenidee {
+    background-color: #F7F2EB;
+    z-index: 4;
+
+    > div {
+        @media screen and (max-width: #{$mobile-only}) {
+            padding-bottom: 12rem;
+        }
+    }
+
+    .section-content {
+        display: flex;
+        justify-content: center;
+        margin-top: 8rem;
+
+        @media screen and (max-width: 768px){
+            flex-direction: column;
+        }
+
+        h3 {
+            font-size: 5rem;
+            color: $accent-light;
+            font-family: $font-family-serif;
+        }
+
+        p {
+            color: #898887;
+            font-size: 2rem;
+            font-weight: 300;
+        }
+
+        .on-large {
+            @media screen and (max-width: #{$mobile-only}) {
+                display: none;
+            }
+        }
+
+        .btn {
+            margin: 3rem 0;
+
+            @media screen and (min-width: #{$mobile-only}) {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 1280px) {
+            h3 {
+                font-size: 4rem;
+            }
+
+            p {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            h3 {
+                font-size: 3rem;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            h3,
+            p {
+                text-align: center;
+            }
+        }
+    }
+
+    .section-part {
+        max-width: 56rem;
+
+        @media screen and (max-width: 768px){
+            max-width: 100%;
+        }
+
+        @media screen and (max-width: #{$mobile-only}) {
+            text-align: center;
+        }
+
+        &.left {
+            margin-right: 4rem;
+            margin-top: 5rem;
+
+            @media screen and (max-width: 1150px)  {
+                margin-top: 0;
+            }
+
+            @media screen and (max-width: 768px) {
+                margin-right: 0;
+            }
+        }
+
+        &.right {
+            margin-left: 4rem;
+
+            @media screen and (max-width: 768px){
+                margin-left: 0;
+            }
+        }
+    }
+}

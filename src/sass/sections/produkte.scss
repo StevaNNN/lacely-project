@@ -1,0 +1,149 @@
+.section.produkte {
+    background-color: #52644F;
+    min-height: 100vh;
+    z-index: 4;
+
+    .plastic {
+        position: absolute;
+        right: 4rem;
+        top: -10rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        background-image: url("#{$img-path}produkte/plastik.png");
+        width: 20rem;
+        height: 20rem;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        font-size: 24px;
+        color: $accent-light;
+
+        @media screen and (max-width: 1024px) {
+            left: calc(50% - 10rem);
+        }
+
+        @media screen and (max-width: #{$mobile-only}) {
+            width: 16rem;
+            height: 16rem;
+            top: -8rem;
+            left: calc(50% - 8rem);
+        }
+
+        > span {
+            width: 60%;
+            line-height: 1.3;
+            padding-top: 2px;
+            display: none;
+        }
+    }
+
+    > div {
+        padding-top: 12rem;
+    }
+
+    .section-content {
+        margin-top: 8rem;
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (max-width: 1024px) {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        @media screen and (max-width: #{$mobile-only}) {
+            display: none;
+        }
+    }
+
+    .section-content-with-slider {
+        margin-top: 8rem;
+
+        .slick-arrow {
+            display: none !important;
+        }
+
+        .slick-dots li {
+            &.slick-active {
+                button::before {
+                    background-color: $white;
+                }
+            }
+            button {
+                border-radius: 50%;
+                border: 1px solid $white;
+                position: relative;
+                overflow: hidden;
+
+                &::before {
+                    position: absolute;
+                    left: 2px;
+                    top: 2px;
+                    border-radius: 50%;
+                    font-size: 0;
+                    opacity: 1;
+                    width: calc(100% - 4px);
+                    height: calc(100% - 4px);
+                    font-family: $font-family;
+                }
+            }
+        }
+
+        @media screen and (min-width: #{$mobile-only}){
+            display: none;
+        }  
+    }
+
+    .section-card {
+        color: $white;
+        max-width: 36rem;
+
+        @media screen and (max-width: 1200px) {
+            max-width: 30rem;
+        }
+
+        @media screen and (max-width: 1024px) {
+            max-width: 50rem;
+        }
+
+        h3 {
+            color: $accent-light;
+            font-size: 3rem;
+
+            @media screen and (max-width: 1024px) {
+                text-align: center;
+            }
+        }
+
+        p {
+            font-size: 2rem;
+            font-weight: 300;
+
+            @media screen and (max-width: 1024px) {
+                text-align: center;
+            }
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            min-height: 290px;
+            max-height: 290px;
+            object-fit: contain;
+            background-color: #DEDEDE;
+
+            @media screen and (max-width: 1024px) {
+                min-height: 50rem;
+                max-height: 50rem;
+            }
+
+            @media screen and (max-width: #{$mobile-only}) {
+                min-height: 30rem;
+                max-height: 30rem;
+                margin: 0 auto;
+            }
+        }
+    }
+}
