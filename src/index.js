@@ -1,13 +1,33 @@
+// import slick carousel
+import 'slick-carousel';
 // site config
 let headerHeight = 140;
 let headerHeightOnClickNavigation = 80;
 let lAnimationDuration = 500;
 let animationFlagClsRationPerSection = 1.3;
-let heroSectionHeight = $('.section.hero').height() - headerHeight;
-let numberOfClasses = 20;
 
-import 'slick-carousel';
+const heroSectionHeight = $('.section.hero').height() - headerHeight;
+const circleZeroToTwenty = document.getElementById('zero-to-twenty')
+const twentyPercent = document.getElementById('twenty-percent');
+const eightyPercent = document.getElementById('eighty-percent');
 
+// helper function for animating specific value from to or adding classes
+function animateValue(obj, start, end, duration, percentage = false) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        if(percentage) {
+            obj.classList.add(`p${Math.floor(progress * (end - start) + start)}`)
+        } else {
+            obj.innerHTML = Math.floor(progress * (end - start) + start);
+        }
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        }
+    };
+    window.requestAnimationFrame(step);
+}
 // function responsible for flagging if element(section) is in view
 const isFullySeen = el =>
     el && typeof el.getBoundingClientRect === 'function'
@@ -15,21 +35,15 @@ const isFullySeen = el =>
     window.scrollY + (window.innerHeight / animationFlagClsRationPerSection - headerHeight) <= window.innerHeight + window.scrollY;
 
 $(document).ready(function () {
-
-    $('.slider').slick({
-        dots: true,
-        // infinite: true,
-        // speed: 500,
-        // fade: 500,
-        // cssEase: 'linear'
-    });
+    // initializing slider
+    $('.slider').slick({dots: true,});
 
     // scrolling entire page to top on page load
-    // $('html, body').animate({scrollTop: $('#hero').offset().top}, lAnimationDuration);
-    // setTimeout(function () {$('#hero').addClass('in-view');}, lAnimationDuration);
+    $('html, body').animate({scrollTop: $('#hero').offset().top}, lAnimationDuration);
+    setTimeout(function () {$('#hero').addClass('in-view');}, lAnimationDuration);
 
     $(window).scroll(function () {
-        let windscroll = $(window).scrollTop();
+        const windscroll = $(window).scrollTop();
 
         // setting active cls on header nav items while scrolling
         if (windscroll >= (headerHeight * 2)) {
@@ -52,28 +66,18 @@ $(document).ready(function () {
             $('.section').removeClass('header-reduced');
         }
 
-
+        // iterating through every section
         $('.section').each(function() {
+
             /// scrolling on specific section result in giving that section in view section
             if (isFullySeen(this) === true) {
                 $(this).addClass('in-view');
             }
 
-            /// scrolling on vision section will result in adding 20 different classes on specific element
-            /// creating visual animation of green circle from 0% to 20%
-            if(isFullySeen(this) && $(this).hasClass('vision') && $(this).hasClass('in-view')) {
-
-                let tempCls = 0;
-                let steva = clearInterval(temp);
-
-                var temp = setTimeout(function () {
-                    setInterval(function () {
-                        if (tempCls < numberOfClasses) {
-                            tempCls++;
-                            $('.c100').addClass(`p${tempCls}`).animate();
-                        }
-                    }, 100);
-                }, 1000, steva)
+            if(isFullySeen(this) && $(this).hasClass('vision')) {
+                animateValue(circleZeroToTwenty, 0, 20, 2000, true);
+                animateValue(twentyPercent, 0, 20, 2000);
+                animateValue(eightyPercent, 0, 80, 2000);
             }
         });
     });
@@ -121,17 +125,6 @@ $(document).ready(function () {
         $('.nav-item.hero').removeClass('active');
         $('.nav-item.was-wir-tun').addClass('active');
         $('html, body').animate({scrollTop: $('#was-wir-tun').offset().top - headerHeightOnClickNavigation}, lAnimationDuration);
-    });
-
-    // hamburger click handler
-    $('.hamburger').click(function () {
-        if ($(this).hasClass('active')) {
-            $(this).removeClass('active');
-            $('.sidemenu-wrap').removeClass('shown');
-        } else {
-            $(this).addClass('active');
-            $('.sidemenu-wrap').addClass('shown');
-        }
     });
 
     /// hamburger fancier menu click handler

@@ -109,6 +109,10 @@
                 height: 850px;
             }
 
+            @media screen and (min-width: 860px) and (max-width:880px) {
+                height: 820px;
+            }
+
             @media screen and (max-width: 860px) {
                 top: 8rem;
                 right: -1rem;

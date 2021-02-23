@@ -61,16 +61,22 @@
     .section-content-with-slider {
         margin-top: 8rem;
 
+        @media screen and (min-width: #{$mobile-only + 1}){
+            display: none;
+        }
+
         .slick-arrow {
             display: none !important;
         }
 
         .slick-dots li {
             &.slick-active {
+
                 button::before {
                     background-color: $white;
                 }
             }
+
             button {
                 border-radius: 50%;
                 border: 1px solid $white;
@@ -90,10 +96,6 @@
                 }
             }
         }
-
-        @media screen and (min-width: #{$mobile-only}){
-            display: none;
-        }  
     }
 
     .section-card {
@@ -118,8 +120,7 @@
         }
 
         p {
-            font-size: 2rem;
-            font-weight: 300;
+            font-size: $font-size-lg;
 
             @media screen and (max-width: 1024px) {
                 text-align: center;

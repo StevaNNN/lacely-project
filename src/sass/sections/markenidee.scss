@@ -3,6 +3,7 @@
     z-index: 4;
 
     > div {
+
         @media screen and (max-width: #{$mobile-only}) {
             padding-bottom: 12rem;
         }
@@ -18,15 +19,40 @@
         }
 
         h3 {
-            font-size: 5rem;
+            font-size: 4rem;
             color: $accent-light;
             font-family: $font-family-serif;
+
+            @media screen and (max-width: 1280px) {
+                font-size: 3.5rem;
+            }
+
+            @media screen and (max-width: 1024px) {
+                font-size: 3rem;
+            }
+
+            @media screen and (max-width: 768px) {
+                font-size: 2.5rem;
+                text-align: center;
+            }
+
+            @media screen and (max-width: 425px) {
+                font-size: 2rem;
+                text-align: center;
+            }
         }
 
         p {
             color: #898887;
             font-size: 2rem;
-            font-weight: 300;
+
+            @media screen and (max-width: 1280px) {
+                font-size: 1.6rem;
+            }
+
+            @media screen and (max-width: 768px) {
+                text-align: center;
+            }
         }
 
         .on-large {
@@ -38,31 +64,8 @@
         .btn {
             margin: 3rem 0;
 
-            @media screen and (min-width: #{$mobile-only}) {
+            @media screen and (min-width: #{$mobile-only + 1}) {
                 display: none;
-            }
-        }
-
-        @media screen and (max-width: 1280px) {
-            h3 {
-                font-size: 4rem;
-            }
-
-            p {
-                font-size: 1.6rem;
-            }
-        }
-
-        @media screen and (max-width: 1024px) {
-            h3 {
-                font-size: 3rem;
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            h3,
-            p {
-                text-align: center;
             }
         }
     }
@@ -70,7 +73,12 @@
     .section-part {
         max-width: 56rem;
 
-        @media screen and (max-width: 768px){
+        @media screen and (max-width: 768px) {
+            max-width: 75%;
+            margin: 0 auto;
+        }
+
+        @media screen and (max-width: 525px) {
             max-width: 100%;
         }
 
@@ -87,7 +95,7 @@
             }
 
             @media screen and (max-width: 768px) {
-                margin-right: 0;
+                margin: 0 auto;
             }
         }
 
@@ -95,7 +103,7 @@
             margin-left: 4rem;
 
             @media screen and (max-width: 768px){
-                margin-left: 0;
+                margin: 0 auto;
             }
         }
     }

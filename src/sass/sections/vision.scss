@@ -95,29 +95,69 @@
                 }
 
                 &.p1 {
-                    margin: 7.5rem 14rem 0 0;
+                    margin: 6.5rem 13rem 0 0;
 
                     @media screen and (max-width: 550px) {
                         margin: 4.2rem 9.8rem 0 0;
                     }
 
+                    @media screen and (max-width: 450px) {
+                        margin: 6.2rem 9.8rem 0 0;
+                    }
+
                     @media screen and (max-width: 425px) {
-                        margin: 3.7rem 7.5rem 0 0;
+                        margin: 2.2rem 7.8rem 0 0
                     }
                 }
 
-                &.p12 {
-                    margin: 50px 164px 0 0;
-
+                #twenty-percent,
+                #eighty-percent {
+                    font-size: 8rem;
+                    position: absolute;
+                    font-family: $font-family-serif;
+                    top: -11rem;
+                    right: 0;
+                    color: $accent;
 
                     @media screen and (max-width: 550px) {
-                        margin: 18px 122px 0 0;
+                        font-size: 6rem;
+                        top: -9rem;
                     }
 
-                    @media screen and (max-width: 425px) {
-                        margin: 1.3rem 10rem 0 0;
+                    @media screen and (max-width: 450px) {
+                        font-size: 5rem;
+                        top: -7rem;
+                    }
+
+                    &::after {
+                        content: '%';
+                        font-size: 4rem;
+                        position: absolute;
+                        top: 1.5rem;
+
+                        @media screen and (max-width: 550px) {
+                            font-size: 3rem;
+                            top: 1rem;
+                        }
                     }
                 }
+
+                #eighty-percent {
+                    top: unset;
+                    right: -14rem;
+                    bottom: -5rem;
+                    color: #544E4C;
+
+                    @media screen and (max-width: 550px) {
+                        right: -11rem;
+                    }
+
+                    @media screen and (max-width: 450px) {
+                        right: -10rem;
+                        bottom: -2rem;
+                    }
+                }
+
 
                 .slice {
 
