@@ -106,7 +106,7 @@ module.exports = {
         filename: 'bundle.main.js' /// naming transpiled js into custom name
     },
     devServer: {
-        host: 'localhost',
+        host: '192.168.0.12',
         port: 9999,
         disableHostCheck: true
     }

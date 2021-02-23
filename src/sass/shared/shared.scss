@@ -72,66 +72,58 @@ a {
             }
         }
     }
+}
 
-    .section-before-title {
-        text-align: center;
-        margin: 0 0 1rem 0;
-        font-weight: 300;
-    }
-
-    .section-title {
-        font-family: $font-family-serif;
-        margin: 0 0 0 0;
-        position: relative;
-        text-align: center;
-
-        &::after {
-            background-color: $white;
-            content: '';
-            height: 1rem;
-            width: 10rem;
-            position: absolute;
-            left: calc(50% - 5rem);
-            bottom: -3rem;
-        }
-
-        &.underline-left {
-            &::after {
-                left: 0;
-            }
-        }
-    }
+.section-before-title {
+    text-align: center;
+    margin: 0 0 1rem 0;
+    font-family: $font-family;
 
     @media screen and (min-width: 1px) {
+        font-size: $font-size;
 
-        .section-title {
-            font-size: 4rem;
-        }
-
-        .section-before-title {
-            font-size: 1.6rem;
-        }
     }
 
     @media screen and (min-width: 470px) {
-
-        .section-title {
-            font-size: 5rem;
-        }
-
-        .section-before-title {
-            font-size: 1.8rem;
-        }
+        font-size: $font-size-m;
     }
 
     @media screen and (min-width: 768px) {
+        font-size: $font-size-l;
+    }
+}
 
-        .section-title {
-            font-size: 6rem;
-        }
+.section-title {
+    font-family: $font-family-serif;
+    margin: 0 0 0 0;
+    position: relative;
+    text-align: center;
 
-        .section-before-title {
-            font-size: 2rem;
+    @media screen and (min-width: 1px) {
+        font-size: 3rem;
+    }
+
+    @media screen and (min-width: 470px) {
+        font-size: 4rem;
+    }
+
+    @media screen and (min-width: 768px) {
+        font-size: 5rem;
+    }
+
+    &::after {
+        background-color: $white;
+        content: '';
+        height: 1rem;
+        width: 10rem;
+        position: absolute;
+        left: calc(50% - 5rem);
+        bottom: -3rem;
+    }
+
+    &.underline-left {
+        &::after {
+            left: 0;
         }
     }
 }
@@ -143,8 +135,8 @@ h1 {
 }
 
 .icon {
-    width: 18px;
-    height: 18px;
+    width: 1.8rem;
+    height: 1.8rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;

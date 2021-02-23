@@ -28,27 +28,25 @@ $font-size-l:           1.8rem;
 /// App font size xl
 /// @group op-vars
 $font-size-lg:        2rem;
-/// App material font icons
-/// @group op-vars
-$icons-font-family: 'MaterialIcons';
-/// App material font icons size
-/// @group op-vars
-$icons-font-size: 2.4rem;
-/// App font font family
+/// App font font family light
 /// @group op-vars
 $font-family-light: 'roboto-thin';
+/// App font font family regular
+/// @group op-vars
 $font-family: 'roboto-regular';
+/// App font font family medium
+/// @group op-vars
 $font-family-medium: 'roboto-medium';
 /// App secondary font family
 /// @group op-vars
 $font-family-serif: 'custom-serif';
-/// App secondary semibold font
+/// App font weight normal
 /// @group op-vars
 $font-weight: 400;
-/// App secondary semibold font
+/// App font weight semibold
 /// @group op-vars
 $font-weight-semibold: 600;
-/// App secondary bold font
+/// App font weight bold
 /// @group op-vars
 $font-weight-bold: 700;
 /// App accent color
@@ -69,29 +67,30 @@ $black: #000;
 /// App text color
 /// @group op-vars
 $color: #534F4B;
+/// App text color light
+/// @group op-vars
+$color-light: #898887;
 /// App body bg color
 /// @group op-vars
 $body-bg: $white;
 /// App body color
 /// @group op-vars
 $body-color: $color;
-/// App body color
-/// @group op-vars
-$body-color-light: rgba($white, .85);
 /// App page spacing
 /// @group op-vars
 $page-spacing: 2.4rem;
 /// App header height
 /// @group op-vars
-$header-height: 140px;
+$header-height: 14rem;
 /// App header height
 /// @group op-vars
 $header-reduced-height: 8rem;
 /// App accent color
 /// @group op-vars
 $border-radius: .4rem;
-/// App accent color
+/// App animation duration
 /// @group op-vars
 $animation-duration: 250ms;
-
+/// App mobile only breakpoint
+/// @group op-vars
 $mobile-only: 600px;

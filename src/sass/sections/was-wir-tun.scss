@@ -1,13 +1,12 @@
-.section.was-wir-tun {
+.was-wir-tun {
     position: relative;
     background-color: white;
-    z-index: 4;
 
     > div {
         z-index: 1;
     }
 
-    .greener-everyday {
+    .circle {
         position: absolute;
         right: 10rem;
         top: -10rem;
@@ -28,27 +27,27 @@
         @media screen and (max-width: 410px) {
             right: 2rem;
         }
+    }
 
-        .picture {
-            width: 100%;
-            height: 100%;
-            z-index: 2;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-            background-image: url("#{$img-path}was-wir-tun/greener-everyday.png");
-            position: absolute;
-        }
+    .circle-picture {
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        background-image: url("#{$img-path}was-wir-tun/greener-everyday.png");
+        position: absolute;
+    }
 
-        .text {
-            font-size: 24px;
-            color: $accent-light;
-            z-index: 1;
-            width: 60%;
-            line-height: 1.3;
-            padding-top: 2px;
-            display: none;
-        }
+    .circle-text {
+        font-size: 24px;
+        color: $accent-light;
+        z-index: 1;
+        width: 60%;
+        line-height: 1.3;
+        padding-top: 2px;
+        display: none;
     }
 
     .top-left-item-wrap {
@@ -58,7 +57,6 @@
         @media screen and (max-width: 992px) {
             flex-direction: column;
         }
-
 
         .check-item-icon,
         .close-item-icon {
@@ -99,34 +97,38 @@
         }
 
         h3 {
-            color: $accent-light;
-            font-size: 3rem;
-            margin: 0;
             font-family: $font-family-serif;
+            color: $accent-light;
+            font-size: 2.2rem;
+            margin: 0;
         }
 
         p {
-            font-size: 1.8rem;
-            font-weight: 300;
+            font-size: $font-size-l;
+            color: $color-light;
         }
     }
 
     .bottom-left-item-wrap {
         display: flex;
         margin-top: 20rem;
-        align-items: center;
 
-        @media screen and (max-width: 970px) {
-            margin-top: 15rem;
+        @media screen and (max-width: 992px) {
+            margin-top: 32rem;
+        }
+
+        @media screen and (max-width: 900px) {
+            margin-top: 25rem;
         }
 
         @media screen and (max-width: 768px) {
             flex-direction: column;
             margin-top: 32rem;
+            align-items: center;
         }
 
         @media screen and (max-width: 629px) {
-            margin-top: 22rem;
+            margin-top: 25rem;
         }
 
         @media screen and (max-width: #{$mobile-only}) {
@@ -141,16 +143,6 @@
             width: 100%;
             text-align: center;
 
-            .card-img {
-                background-image: url("#{$img-path}was-wir-tun/icon-men.png");
-            }
-
-            &:nth-of-type(1) {
-                @media screen and (max-width: 970px) {
-                    margin-top: 15rem;
-                }
-            }
-
             &:not(:last-of-type) {
                 margin-right: 4rem;
 
@@ -159,10 +151,21 @@
                 }
             }
 
+            &:nth-of-type(1) {
+
+                .card-img {
+                    background-image: url("#{$img-path}was-wir-tun/icon-men.png");
+                }
+
+                @media screen and (max-width: 900px) {
+                    margin-top: 15rem;
+                }
+            }
+
             &:nth-of-type(2) {
                 margin-top: 18rem;
 
-                @media screen and (max-width: 970px) {
+                @media screen and (max-width: 900px) {
                     margin-top: 33rem;
                 }
 
@@ -178,7 +181,7 @@
             &:nth-of-type(3) {
                 margin-top: 36rem;
 
-                @media screen and (max-width: 970px) {
+                @media screen and (max-width: 900px) {
                     margin-top: 51rem;
                 }
 
@@ -215,8 +218,8 @@
         }
 
         p {
-            font-size: 1.8rem;
-            font-weight: 300;
+            font-size: $font-size-l;
+            color: $color-light;
         }
     }
 
