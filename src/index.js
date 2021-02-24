@@ -1,47 +1,34 @@
 // import slick carousel
 import 'slick-carousel';
+
 // site config
 let headerHeight = 140;
 let headerHeightOnClickNavigation = 80;
 let lAnimationDuration = 500;
 let animationFlagClsRationPerSection = 1.3;
+let twentyNumber = 0;
+let eightyNumber = 0;
 
+// hero section height
 const heroSectionHeight = $('.section.hero').height() - headerHeight;
-const circleZeroToTwenty = document.getElementById('zero-to-twenty')
-const twentyPercent = document.getElementById('twenty-percent');
-const eightyPercent = document.getElementById('eighty-percent');
 
-// helper function for animating specific value from to or adding classes
-function animateValue(obj, start, end, duration, percentage = false) {
-    let startTimestamp = null;
-    const step = (timestamp) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        if(percentage) {
-            obj.classList.add(`p${Math.floor(progress * (end - start) + start)}`)
-        } else {
-            obj.innerHTML = Math.floor(progress * (end - start) + start);
-        }
-        if (progress < 1) {
-            window.requestAnimationFrame(step);
-        }
-    };
-    window.requestAnimationFrame(step);
-}
 // function responsible for flagging if element(section) is in view
 const isFullySeen = el =>
     el && typeof el.getBoundingClientRect === 'function'
     && el.getBoundingClientRect()['top'] +
     window.scrollY + (window.innerHeight / animationFlagClsRationPerSection - headerHeight) <= window.innerHeight + window.scrollY;
 
+// on page ready
 $(document).ready(function () {
+
     // initializing slider
-    $('.slider').slick({dots: true,});
+    $('.slider').slick({ dots: true });
 
     // scrolling entire page to top on page load
-    $('html, body').animate({scrollTop: $('#hero').offset().top}, lAnimationDuration);
-    setTimeout(function () {$('#hero').addClass('in-view');}, lAnimationDuration);
+    $('html, body').animate({ scrollTop: $('#hero').offset().top }, lAnimationDuration);
+    setTimeout(function () { $('#hero').addClass('in-view'); }, lAnimationDuration);
 
+    // on window scroll
     $(window).scroll(function () {
         const windscroll = $(window).scrollTop();
 
@@ -74,10 +61,26 @@ $(document).ready(function () {
                 $(this).addClass('in-view');
             }
 
-            if(isFullySeen(this) && $(this).hasClass('vision')) {
-                animateValue(circleZeroToTwenty, 0, 20, 2000, true);
-                animateValue(twentyPercent, 0, 20, 2000);
-                animateValue(eightyPercent, 0, 80, 2000);
+            // scrolling to the VISION section result in triggering animation
+            if(isFullySeen(this) === true && $(this).hasClass('vision')) {
+                let myInterval = setInterval(function () {
+                    if (twentyNumber < 20) {
+                        twentyNumber += 1;
+                        $('.c100').addClass(`p${twentyNumber}`);
+                        $('#twenty-percent').text(`${twentyNumber}`)
+                    } else {
+                        clearInterval(myInterval);
+                    }
+                }, 100);
+
+                let myInterval2 = setInterval(function () {
+                    if (eightyNumber < 80) {
+                        eightyNumber += 1;
+                        $('#eighty-percent').text(`${eightyNumber}`)
+                    } else {
+                        clearInterval(myInterval2);
+                    }
+                }, 35);
             }
         });
     });
