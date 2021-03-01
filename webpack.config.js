@@ -96,6 +96,10 @@ module.exports = {
             favicon: './src/assets/img/favicon.ico', // inject favicon
             filename: "./index.html" // where to store html with plugin
         }),
+        new htmlWebPackPlugin({
+            template: "./src/quick-fix.html", /// where is HTML placed into project
+            filename: "./quick-fix.html" // where to store html with plugin
+        }),
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery'
