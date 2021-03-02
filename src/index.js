@@ -63,24 +63,28 @@ $(document).ready(function () {
 
             // scrolling to the VISION section result in triggering animation
             if(isFullySeen(this) === true && $(this).hasClass('vision')) {
-                let myInterval = setInterval(function () {
-                    if (twentyNumber < 20) {
-                        twentyNumber += 1;
-                        $('.c100').addClass(`p${twentyNumber}`);
-                        $('#twenty-percent').text(`${twentyNumber}`)
-                    } else {
-                        clearInterval(myInterval);
-                    }
-                }, 100);
+                setTimeout(function () {
+                    let myInterval = setInterval(function () {
+                        if (twentyNumber < 20) {
+                            twentyNumber += 1;
+                            $('.c100').addClass(`p${twentyNumber}`);
+                            $('#twenty-percent').text(`${twentyNumber}`)
+                        } else {
+                            clearInterval(myInterval);
+                        }
+                    }, 150);
+                },2000);
 
-                let myInterval2 = setInterval(function () {
-                    if (eightyNumber < 80) {
-                        eightyNumber += 1;
-                        $('#eighty-percent').text(`${eightyNumber}`)
-                    } else {
-                        clearInterval(myInterval2);
-                    }
-                }, 35);
+                setTimeout(function () {
+                    let myInterval2 = setInterval(function () {
+                        if (eightyNumber < 80) {
+                            eightyNumber += 1;
+                            $('#eighty-percent').text(`${eightyNumber}`)
+                        } else {
+                            clearInterval(myInterval2);
+                        }
+                    }, 150);
+                }, 2000);
             }
         });
     });

@@ -1,5 +1,5 @@
 .section {
-    $animationStyle: cubic-bezier(0, .47, 1, .48);
+    $animationStyle: ease-in-out;
 
     $animationDurationShort: 1000ms;
     $animationDurationMedium: 1500ms;
@@ -136,7 +136,7 @@
     &.markenidee {
 
         .section-part {
-            transform: translateX(-50%);
+            //transform: translateX(-50%);
             opacity: 0;
 
             &.left,
@@ -167,7 +167,7 @@
 
             .section-part {
                 opacity: 1;
-                transform: translateX(0);
+                //transform: translateX(0);
             }
         }
     }
@@ -236,20 +236,21 @@
 
             &.second {
 
-                .left,
-                .right {
-                    transform: translateX(-50%);
-                }
+                //.left,
+                //.right {
+                //    transform: translateX(-50%);
+                //}
 
                 .left {
+                    transition-delay: $animationDelayLong + 500;
+                }
+
+                .right {
                     transition-delay: $animationDelayLong;
                 }
 
-                .right {
-                    transition-delay: $animationDelayMedium;
-                }
-
                 @media screen and (max-width: 1000px) {
+
                     .left {
                         transition-delay: $animationDelayMedium;
                     }
@@ -270,13 +271,13 @@
                     opacity: 1;
                 }
 
-                &.second {
-
-                    .left,
-                    .right {
-                        transform: translateX(0);
-                    }
-                }
+                //&.second {
+                //
+                //    .left,
+                //    .right {
+                //        transform: translateX(0);
+                //    }
+                //}
             }
         }
     }
@@ -285,7 +286,7 @@
 
         .left,
         .right {
-            transform: translateX(-50%);
+            //transform: translateX(-50%);
             opacity: 0;
             transition-property: opacity, transform;
             transition-duration: $animationDurationShort;
@@ -293,26 +294,27 @@
         }
 
         .left {
-            transition-delay: $animationDelayMedium;
+            transition-delay: $animationDelayLong;
         }
 
         .right {
-            transform: translateX(-100%);
+            //transform: translateX(-100%);
+            transition-delay: $animationDelayMedium;
         }
 
         .slice span {
             opacity: 0;
-            transition-property: opacity, transform;
+            transition-property: opacity;
             transition-duration: $animationDurationShort;
             transition-timing-function: $animationStyle;
-            transition-delay: $animationDelayLong + $animationDelayShort;
+            transition-delay: $animationDelayLong + $animationDelayMedium;
         }
 
         &.in-view {
 
             .left,
             .right {
-                transform: translateX(0);
+                //transform: translateX(0);
                 opacity: 1;
             }
 
@@ -379,7 +381,7 @@
 
         .left,
         .right {
-            transform: translateX(-50%);
+            //transform: translateX(-50%);
             opacity: 0;
             transition-property: opacity, transform;
             transition-duration: $animationDurationShort;
@@ -387,6 +389,10 @@
         }
 
         .left {
+            transition-delay: $animationDelayMedium;
+        }
+
+        .right {
             transition-delay: $animationDelayShort;
         }
 
@@ -395,7 +401,7 @@
             .left,
             .right {
                 opacity: 1;
-                transform: translateX(0);
+                //transform: translateX(0);
             }
         }
     }
