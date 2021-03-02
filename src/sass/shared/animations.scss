@@ -1,3 +1,21 @@
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(20deg);
+    }
+}
+
+@keyframes rotate-negative-to-positive {
+    0% {
+        transform: rotate(-20deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 .section {
     $animationStyle: ease-in-out;
 
@@ -335,7 +353,7 @@
         .circles-separator{
             opacity: 0;
             transition-property: opacity;
-            transition-duration: 1000ms;
+            transition-duration: $animationDurationShort;
             transition-timing-function: ease-in-out;
         }
 
