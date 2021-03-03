@@ -91,6 +91,9 @@ $border-radius: .4rem;
 /// App animation duration
 /// @group op-vars
 $animation-duration: 250ms;
+/// App animation type
+/// @group op-vars
+$animation-type: ease-in-out;
 /// App mobile only breakpoint
 /// @group op-vars
 $mobile-only: 600px;

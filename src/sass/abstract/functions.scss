@@ -1,0 +1,22 @@
+/// transition
+/// @author Stevan Stojanovic
+/// @group tp-functions
+/// @access public
+/// @require {variable} $transition-duration
+/// @require {variable} $transition-animation
+/// @return {CSS property} css transition property if you want to use multiple transition just call this fn as many
+/// times as you need with comma separation
+/// @example
+///    .test { transition: transition(background-color), transition(color, 400ms, linear, 200ms); }
+///
+///     will result in:
+///
+///       .test { transition: background-color 200ms ease-in-out, color 400ms linear 200ms}
+@function transition(
+  $css-property,
+  $transition-duration: $animation-duration,
+  $transition-animation: $animation-type,
+  $transition-delay: null) {
+
+  @return $css-property $transition-duration $transition-animation $transition-delay;
+}

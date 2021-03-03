@@ -24,17 +24,6 @@
     .header-reduced & {
         padding: 2.8rem 1.8rem;
 
-        &:hover,
-        &.active {
-            &::after {
-                width: calc(100% - 3.6rem);
-            }
-        }
-
-        &::after {
-           left: 1.8rem;
-        }
-
         @media only screen and (max-width: 1280px) {
             padding: 2.3rem 1rem;
         }
@@ -50,17 +39,23 @@
         bottom: 0;
         height: .7rem;
         position: absolute;
-        left: 2.4rem;
         background: $accent;
-        width: 0;
-        transition: width 150ms ease-in-out 50ms;
+        width: calc(100% - 3.6rem);
+        left: 1.8rem;
+        transform: scaleX(0);
+        transition: transform $animation-duration $animation-type 50ms;
+
+        @media only screen and (max-width: 1280px) {
+            width: calc(100% - 2rem);
+            left: 1rem;
+        }
     }
 
     &:hover,
     &.active {
 
         &:after {
-            width: calc(100% - 4.8rem);
+            transform: scaleX(1);
         }
     }
 
