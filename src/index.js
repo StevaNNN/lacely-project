@@ -5,7 +5,7 @@ import 'slick-carousel';
 let headerHeight = 140;
 let headerHeightOnClickNavigation = 80;
 let lAnimationDuration = 500;
-let animationFlagClsRationPerSection = 1.3;
+let animationFlagClsRationPerSection = 1.7;
 let twentyNumber = 0;
 let eightyNumber = 0;
 
@@ -73,7 +73,7 @@ $(document).ready(function () {
                             clearInterval(myInterval);
                         }
                     }, 150);
-                },2000);
+                },1000);
 
                 setTimeout(function () {
                     let myInterval2 = setInterval(function () {
@@ -84,7 +84,7 @@ $(document).ready(function () {
                             clearInterval(myInterval2);
                         }
                     }, 150);
-                }, 2000);
+                }, 1000);
             }
         });
     });
@@ -139,9 +139,11 @@ $(document).ready(function () {
         if ($(this).hasClass('cross')) {
             $(this).removeClass('cross');
             $('.sidemenu-wrap').removeClass('shown');
+            $('html').removeClass('no-scroll-y');
         } else {
             $(this).addClass('cross')
             $('.sidemenu-wrap').addClass('shown');
+            $('html').addClass('no-scroll-y');
         }
     });
 

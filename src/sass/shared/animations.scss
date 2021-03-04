@@ -23,9 +23,9 @@
     $animationDurationMedium: 1500ms;
     $animationDurationLong: 2000ms;
 
-    $animationDelayShort: 500ms;
-    $animationDelayMedium: 1000ms;
-    $animationDelayLong: 1500ms;
+    $animationDelayShort: 200ms;
+    $animationDelayMedium: 400ms;
+    $animationDelayLong: 600ms;
 
     // shared animations
     &.markenidee,
@@ -320,13 +320,13 @@
             transition-delay: $animationDelayMedium;
         }
 
-        .slice span {
-            opacity: 0;
-            transition-property: opacity;
-            transition-duration: $animationDurationShort;
-            transition-timing-function: $animationStyle;
-            transition-delay: $animationDelayLong + $animationDelayMedium;
-        }
+        //.slice span {
+        //    opacity: 0;
+        //    transition-property: opacity;
+        //    transition-duration: $animationDurationShort;
+        //    transition-timing-function: $animationStyle;
+        //    transition-delay: $animationDelayLong + $animationDelayMedium;
+        //}
 
         &.in-view {
 
@@ -336,9 +336,9 @@
                 opacity: 1;
             }
 
-            .slice span {
-                opacity: 1;
-            }
+            //.slice span {
+            //    opacity: 1;
+            //}
         }
     }
 
@@ -426,11 +426,11 @@
 
     &.kontakt {
 
-        .circle-with-leaves {
+        .circle-with-leaves,
+        .circle-picture {
             transition-property: opacity;
             transition-timing-function: $animationStyle;
-            transition-duration: $animationDurationShort;
-            transition-delay: $animationDelayShort;
+            transition-duration: 5s;
             opacity: 0;
         }
 
@@ -441,7 +441,8 @@
             }
 
             .circle-picture {
-                animation: rotate 2s forwards linear $animationDurationLong;
+                opacity: 1;
+                animation: rotate 5s forwards linear;
             }
         }
     }

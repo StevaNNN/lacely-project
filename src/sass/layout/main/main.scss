@@ -1,6 +1,6 @@
 body {
 
-    > section {
+    > .section {
         display: flex;
         justify-content: center;
 
@@ -10,7 +10,7 @@ body {
 
         > div {
             position: relative;
-            padding: 12rem 4rem;
+            padding: 8rem 4rem;
             max-width: 128rem;
             flex: 1;
             width: 100%;
