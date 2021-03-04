@@ -5,7 +5,7 @@ import 'slick-carousel';
 let headerHeight = 140;
 let headerHeightOnClickNavigation = 80;
 let lAnimationDuration = 500;
-let animationFlagClsRationPerSection = 1.7;
+let animationFlagClsRationPerSection = 2.3;
 let twentyNumber = 0;
 let eightyNumber = 0;
 
@@ -96,6 +96,7 @@ $(document).ready(function () {
         $(this).addClass('active');
         $('.sidemenu-wrap').removeClass('shown');
         $('.navi-trigger').removeClass('cross');
+        $('html').removeClass('no-scroll-y');
 
         if ($(this).hasClass('was-wir-tun')) {
             $('html, body').animate({scrollTop: $('#was-wir-tun').offset().top - headerHeightOnClickNavigation}, lAnimationDuration);
@@ -141,7 +142,7 @@ $(document).ready(function () {
             $('.sidemenu-wrap').removeClass('shown');
             $('html').removeClass('no-scroll-y');
         } else {
-            $(this).addClass('cross')
+            $(this).addClass('cross');
             $('.sidemenu-wrap').addClass('shown');
             $('html').addClass('no-scroll-y');
         }

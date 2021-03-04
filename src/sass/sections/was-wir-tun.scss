@@ -99,13 +99,14 @@
         h3 {
             font-family: $font-family-serif;
             color: $accent-light;
-            font-size: 2.2rem;
+            font-size: 2.8rem;
             margin: 0;
         }
 
         p {
-            font-size: $font-size-l;
+            font-size: $font-size-lg;
             color: $color-light;
+            margin: .5rem 0 4rem
         }
     }
 
@@ -170,7 +171,7 @@
                 }
 
                 @media screen and (max-width: 768px) {
-                    margin-top: 5rem;
+                    margin-top: 6rem;
                 }
 
                 .card-img {
@@ -186,7 +187,7 @@
                 }
 
                 @media screen and (max-width: 768px) {
-                    margin-top: 5rem;
+                    margin-top: 6rem;
                 }
 
                 .card-img {
@@ -211,15 +212,17 @@
         h3 {
             font-family: $font-family-serif;
             font-size: 2.2rem;
+            margin-bottom: 0;
 
             @media screen and (max-width: 768px) {
-                font-size: 3.2rem;
+                font-size: 2.8rem;
             }
         }
 
         p {
-            font-size: $font-size-l;
+            font-size: $font-size-lg;
             color: $color-light;
+            margin-bottom: 0;
         }
     }
 

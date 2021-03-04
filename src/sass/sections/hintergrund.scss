@@ -20,28 +20,6 @@
         max-height: $height;
     }
 
-    h3 {
-        font-size: 2.4rem;
-        font-family: $font-family-medium;
-        color: #544E4C;
-
-        @media screen and (max-width: 880px) {
-            font-size: 2rem;
-        }
-
-        @media screen and (max-width: 715px) {
-            font-size: 1.8rem;
-        }
-
-        @media screen and (max-width: 615px) {
-            font-size: 1.2rem;
-        }
-
-        @media screen and (max-width: 615px) {
-
-        }
-    }
-
     .logo,
     .derux {
         background-repeat: no-repeat;
@@ -62,6 +40,15 @@
         }
     }
 
+
+
+    .section-title {
+        @media screen and (max-width: 450px) {
+            max-width: 78%;
+            word-break: break-word;
+        }
+    }
+
     .logo {
         background-image: url("#{$img-path}hintergrund/logo-outlined.png");
     }
@@ -73,6 +60,28 @@
 
     .section-content {
         margin-top: 8rem;
+
+        h3 {
+            font-size: 2.4rem;
+            font-family: $font-family-medium;
+            color: #544E4C;
+
+            @media screen and (max-width: 880px) {
+                font-size: 2rem;
+            }
+
+            @media screen and (max-width: 715px) {
+                font-size: 1.8rem;
+            }
+
+            @media screen and (max-width: 615px) {
+                font-size: 1.2rem;
+            }
+
+            @media screen and (max-width: 615px) {
+
+            }
+        }
     }
 
     .section-row {

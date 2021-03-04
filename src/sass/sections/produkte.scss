@@ -24,7 +24,7 @@
             left: calc(50% - 10rem);
         }
 
-        @media screen and (max-width: #{$mobile-only}) {
+        @media screen and (max-width: 768px) {
             width: 16rem;
             height: 16rem;
             top: -8rem;
@@ -60,13 +60,29 @@
 
     .section-content-with-slider {
         margin-top: 8rem;
+        display: none;
 
-        @media screen and (min-width: #{$mobile-only + 1}){
-            display: none;
+        @media screen and (max-width: #{$mobile-only + 1}){
+            display: block;
+        }
+
+        @media screen and (max-width: 601px) and (orientation: landscape) {
+            display: block;
         }
 
         .slick-arrow {
             display: none !important;
+        }
+
+        .slick-slide {
+            > div {
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        .slick-dots {
+            bottom: -5rem;
         }
 
         .slick-dots li {
@@ -111,20 +127,28 @@
         }
 
         h3 {
+            margin: 0;
             color: $accent-light;
             font-family: $font-family-serif;
             font-size: 2.4rem;
 
-            @media screen and (max-width: 1024px) {
-                text-align: center;
+            @media screen and (min-width: 1024px) and (max-width:1200px) {
+                font-size: 2.2rem;
+            }
+
+            @media screen and (max-width:#{$mobile-only}) {
+                font-size: 2.8rem;
+                max-width: 30rem;
+                margin: 0 auto;
             }
         }
 
         p {
-            font-size: $font-size-lg;
+            font-size: $font-size-l;
 
-            @media screen and (max-width: 1024px) {
-                text-align: center;
+            @media screen and (max-width: #{$mobile-only}) {
+                max-width: 30rem;
+                margin: 0 auto;
             }
         }
 
@@ -134,7 +158,6 @@
             min-height: 290px;
             max-height: 290px;
             object-fit: contain;
-            //background-color: #DEDEDE;
 
             @media screen and (max-width: 1024px) {
                 min-height: 50rem;

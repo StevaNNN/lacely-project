@@ -5,7 +5,7 @@
     .section-row {
         display: flex;
         position: relative;
-        padding: 5rem 0;
+        padding: 6rem 0;
 
         @media screen and (max-width: 1000px) {
             flex-direction: column-reverse;
@@ -14,6 +14,7 @@
 
         &:not(.second) {
             margin-top: 8rem;
+            padding-top: 3rem;
 
             @media screen and (max-width: 1000px) {
                 margin-top: 0;
@@ -45,21 +46,20 @@
 
                 @media screen and (max-width: 1000px) {
                     position: initial;
-                    right: 0;
-                    height: 50rem;
-                    background-size: 500px 500px;
+                    margin-left: 6rem;
+                    height: 47rem;
+                    background-size: 47rem 47rem;
                 }
 
                 @media screen and (max-width: 450px) {
-                    height: 45rem;
-                    margin-left: 3rem;
-                    background-size: 45rem 45rem;
+                    height: 42rem;
+                    background-size: 42rem 42rem;
                 }
             }
         }
 
         h3 {
-            font-size: 4.5rem;
+            font-size: 4rem;
             color: $accent-light;
             font-family: $font-family-serif;
 
@@ -69,11 +69,26 @@
             }
 
             @media screen and (max-width: 769px) {
-                font-size: 3rem;
+                font-size: 2.8rem;
+                max-width: 80%;
+                margin: 0 auto;
+            }
+
+            @media screen and (max-width: #{$mobile-only}) {
+                max-width: unset;
             }
         }
 
         &.second {
+            padding: 0 0 0;
+
+            @media screen and (min-width: 1200px) {
+                padding-top: 6rem;
+            }
+
+            @media screen and (min-width: 1000px) {
+                padding-top: 8rem;
+            }
 
             @media screen and (max-width: 1000px) {
                 flex-direction: column;

@@ -6,6 +6,10 @@
     background-repeat: no-repeat;
     position: relative;
 
+    > div {
+        padding-bottom: 2rem;
+    }
+
     #to-top {
         background-image: url("#{$img-path}kontakt/icon-top.png");
         background-color: transparent;
@@ -45,6 +49,7 @@
 
             @media screen and (max-width: 510px){
                 text-align: center;
+                font-size: 1.6rem;
             }
         }
     }
@@ -64,21 +69,16 @@
         @media screen and (min-width:1024px) {
             font-size: 6rem;
         }
-        
-        @media screen and (min-width: 1118px) {
-            font-size: 7rem;
-        }
 
         @media screen and (min-width: 1250px) {
-            font-size: 8rem;
-
+            font-size: 7rem;
         }
     }
 
     .btn {
         background-color: transparent;
         padding: 3rem 6rem;
-        margin-bottom: 10rem;
+        margin-bottom: 6rem;
         white-space: nowrap;
     }
 
@@ -127,13 +127,14 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-bottom: 0;
         }
 
         span {
             margin: 0 2rem;
 
             @media screen and (max-width: 500px) {
-                margin-top: 4rem;
+                margin-top: 2rem;
             }
         }
     }

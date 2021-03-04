@@ -3,6 +3,7 @@ svg {
     height: 90px;
     cursor: pointer;
     transform: translate3d(0, 0, 0);
+    transition: all $animation-duration $animation-type;
 }
 
 path {
@@ -41,8 +42,8 @@ path#middle {
 
 .navi-trigger {
     position: fixed;
-    z-index: 3;
     top: 40px;
+    z-index: 11;
     right: 160px;
 
     @media screen and (min-width: 1025px) {

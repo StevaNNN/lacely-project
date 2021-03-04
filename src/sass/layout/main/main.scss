@@ -1,6 +1,6 @@
 body {
 
-    > .section {
+    > section {
         display: flex;
         justify-content: center;
 
@@ -16,7 +16,7 @@ body {
             width: 100%;
 
             @media screen and (max-width: #{$mobile-only}) {
-                padding: 8rem 4rem
+                padding: 6rem 2rem
             }
         }
     }

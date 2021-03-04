@@ -5,7 +5,7 @@
     > div {
 
         @media screen and (max-width: #{$mobile-only}) {
-            padding-bottom: 12rem;
+            padding-bottom: 8rem;
         }
     }
 
@@ -18,10 +18,15 @@
             flex-direction: column;
         }
 
+        @media screen and (max-width: #{$mobile-only}) {
+            //margin-top: 2rem;
+        }
+
         h3 {
             font-size: 4rem;
             color: $accent-light;
             font-family: $font-family-serif;
+            margin: 0 auto;
 
             @media screen and (max-width: 1280px) {
                 font-size: 3.5rem;
@@ -37,8 +42,7 @@
             }
 
             @media screen and (max-width: 425px) {
-                font-size: 2rem;
-                text-align: center;
+                max-width: 80%;
             }
         }
 
@@ -53,18 +57,16 @@
             @media screen and (max-width: 768px) {
                 text-align: center;
             }
+
+            @media screen and (max-width: #{$mobile-only}){
+                max-width: 80%;
+                margin-right: auto;
+                margin-left: auto;
+            }
         }
 
         .on-large {
             @media screen and (max-width: #{$mobile-only}) {
-                display: none;
-            }
-        }
-
-        .btn {
-            margin: 3rem 0;
-
-            @media screen and (min-width: #{$mobile-only + 1}) {
                 display: none;
             }
         }
@@ -88,19 +90,16 @@
 
         &.left {
             margin-right: 4rem;
-            margin-top: 5rem;
-
-            @media screen and (max-width: 1150px)  {
-                margin-top: 0;
-            }
+            margin-bottom: 5rem;
 
             @media screen and (max-width: 768px) {
-                margin: 0 auto;
+                margin: 0 auto 5rem auto;
             }
         }
 
         &.right {
             margin-left: 4rem;
+            margin-bottom: 5rem;
 
             @media screen and (max-width: 768px){
                 margin: 0 auto;
