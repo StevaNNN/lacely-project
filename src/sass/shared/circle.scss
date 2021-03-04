@@ -63,7 +63,7 @@ $primary-color-green: #4db53c;
 		background-color: transparent;
 		width: 1 - (2 * $circle-width);
 		height: 1 - (2 * $circle-width);
-		transition: all 0.2s ease-in;
+		transition: all $animation-duration $animation-type;
 	}
 
 	// the slice (mask)
