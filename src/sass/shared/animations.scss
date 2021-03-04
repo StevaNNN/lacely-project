@@ -19,9 +19,9 @@
 .section {
     $animationStyle: ease-in-out;
 
-    $animationDurationShort: 1000ms;
-    $animationDurationMedium: 1500ms;
-    $animationDurationLong: 2000ms;
+    $animationDurationShort: 750ms;
+    $animationDurationMedium: 1000ms;
+    $animationDurationLong: 1250ms;
 
     $animationDelayShort: 200ms;
     $animationDelayMedium: 400ms;
@@ -53,7 +53,8 @@
 
     &.was-wir-tun {
 
-        .circle,
+        .circle-picture,
+        .circle-text,
         .top-left-item-wrap .check-item,
         .top-left-item-wrap .close-item,
         .bottom-left-item-wrap .card,
@@ -63,12 +64,18 @@
             transition-timing-function: $animationStyle;
         }
 
-        .circle,
+        .circle-picture,
+        .circle-text,
         .top-left-item-wrap .check-item,
         .top-left-item-wrap .close-item,
         .bottom-left-item-wrap .card,
         .right-background {
             opacity: 0;
+        }
+
+        .circle-picture,
+        .circle-text {
+            transition-duration: 2000ms;
         }
 
         .top-left-item-wrap {
@@ -121,7 +128,8 @@
 
         &.in-view {
 
-            .circle,
+            .circle-picture,
+            .circle-text,
             .top-left-item-wrap .check-item,
             .top-left-item-wrap .close-item,
             .bottom-left-item-wrap .card,
@@ -145,7 +153,7 @@
                 }
             }
 
-            .circle {
+            .circle-picture {
                 animation: rotate-negative-to-positive 2s forwards linear;
             }
         }
@@ -357,26 +365,29 @@
             transition-timing-function: ease-in-out;
         }
 
-        .circle,
+        .circle {
+            transition-duration: 2000ms;
+        }
+
         .logo,
         .circles-separator {
-            transition-delay: 500ms;
+            transition-delay: 250ms;
         }
 
         .derux {
-            transition-delay: 1000ms;
+            transition-delay: 500ms;
         }
 
         .bottom {
-            transition-delay: 1500ms;
+            transition-delay: 750ms;
         }
 
         .left {
-            transition-delay: 2000ms;
+            transition-delay: 1000ms;
         }
 
         .right {
-            transition-delay: 2500ms;
+            transition-delay: 1250ms;
         }
 
         &.in-view {
@@ -390,7 +401,7 @@
             }
 
             .circle-picture {
-                animation: rotate 2s forwards linear 3500ms;
+                animation: rotate-negative-to-positive 2000ms forwards linear;
             }
         }
     }
@@ -427,22 +438,24 @@
     &.kontakt {
 
         .circle-with-leaves,
-        .circle-picture {
+        .circle-picture,
+        .circle-text {
             transition-property: opacity;
             transition-timing-function: $animationStyle;
-            transition-duration: 3s;
+            transition-duration: 2s;
             opacity: 0;
         }
 
         &.in-view {
 
-            .circle-with-leaves {
+            .circle-with-leaves,
+            .circle-text {
                 opacity: 1;
             }
 
             .circle-picture {
                 opacity: 1;
-                animation: rotate 5s forwards linear;
+                animation: rotate-negative-to-positive 2s forwards linear;
             }
         }
     }
