@@ -51,7 +51,6 @@
         }
     }
 
-    &:hover,
     &.active {
 
         &:after {
@@ -61,5 +60,18 @@
 
     &:focus-visible {
         outline: 1px solid blue;
+    }
+}
+
+html:not(.on-mobile-device) {
+
+    .nav-item {
+
+        &:hover {
+
+            &:after {
+                transform: scaleX(1);
+            }
+        }
     }
 }
