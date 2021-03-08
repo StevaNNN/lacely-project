@@ -34,7 +34,7 @@ $(document).ready(function () {
 
         // setting active cls on header nav items while scrolling
         if (windscroll >= (headerHeight * 2)) {
-            $('.section:not(.vision)').each(function (i) {
+            $('.section:not(.vision), .section:not(.wir)').each(function (i) {
                 if ($(this).position().top <= windscroll + headerHeight) {
                     $('.nav-item:not(.sidemenu-list-item).active').removeClass('active');
                     $('.nav-item:not(.sidemenu-list-item)').eq(i).addClass('active');
