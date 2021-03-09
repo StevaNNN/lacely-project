@@ -56,10 +56,6 @@
             transform: scaleX(1);
         }
     }
-
-    &:focus-visible {
-        outline: 1px solid blue;
-    }
 }
 
 html:not(.on-mobile-device) {

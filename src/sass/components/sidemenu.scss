@@ -46,16 +46,11 @@
     color: $white;
     width: 100%;
     text-align: center;
-    height: calc(100% - #{$header-height});
+    height: calc(100% - #{$header-reduced-height});
     position: relative;
-    top: ($header-height / 2);
+    top: ($header-reduced-height / 2);
     overflow-y: auto;
     pointer-events: all;
-
-    @media screen and (max-width: 768px){
-        height: calc(100% - #{$header-reduced-height});
-        top: ($header-reduced-height / 2);
-    }
 
     .sidemenu-list-item {
         color: $body-color;

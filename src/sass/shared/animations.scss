@@ -167,7 +167,7 @@
 
             &.left,
             &.right {
-                transition-property: opacity, transform;
+                transition-property: opacity;
                 transition-timing-function: $animationStyle;
                 transition-duration: $animationDurationShort;
             }
@@ -431,6 +431,39 @@
             .right {
                 opacity: 1;
                 //transform: translateX(0);
+            }
+        }
+    }
+
+    &.wir {
+
+        .ceo {
+            opacity: 0;
+            transition-property: opacity;
+            transition-duration: $animationDurationMedium;
+            transition-timing-function: $animationStyle;
+
+            &.gerd {
+                transition-delay: $animationDelayMedium;
+
+                @media screen and (max-width: 768px) {
+                    transition-delay: $animationDelayShort;
+                }
+            }
+
+            &.samarin {
+                transition-delay: $animationDelayShort;
+
+                @media screen and (max-width: 768px) {
+                    transition-delay: $animationDelayMedium;
+                }
+            }
+        }
+
+        &.in-view {
+
+            .ceo {
+                opacity: 1;
             }
         }
     }

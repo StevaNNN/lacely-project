@@ -1,11 +1,10 @@
 // import slick carousel
 import 'slick-carousel';
 
-
 // site config
 let headerHeight = 140;
 let headerHeightOnClickNavigation = 80;
-let lAnimationDuration = 500;
+let lAnimationDuration = 300;
 let animationFlagClsRationPerSection = 2.3;
 let twentyNumber = 0;
 let eightyNumber = 0;
@@ -33,33 +32,23 @@ $(document).ready(function () {
     $(window).scroll(function () {
         const windscroll = $(window).scrollTop();
 
+        // setting active cls on header nav items while scrolling
+        $('.section:not(.vision)').each(function (i) {
+            if ($(this).position().top <= windscroll + headerHeight) {
+                $('.nav-item:not(.sidemenu-list-item).active').removeClass('active');
+                $('.nav-item:not(.sidemenu-list-item)').eq(i).addClass('active');
+            }
+        });
+
         // setting css classes to header and sections that inform them that header height is reduced or not
         if(windscroll >= heroSectionHeight) {
             headerHeight = headerHeightOnClickNavigation;
             $('.header').addClass('header-reduced');
             $('.section').addClass('header-reduced');
-            
         } else {
             headerHeight = 140;
             $('.header').removeClass('header-reduced');
             $('.section').removeClass('header-reduced');
-           
-        }
-
-        // setting active cls on header nav items while scrolling
-        if (windscroll > 0) {
-            console.log(windscroll)
-            $('.section:not(.vision)').each(function (i) {
-                if(windscroll >= (heroSectionHeight + 140)) {
-                    $('.nav-item.was-wir-tun').addClass('steva');
-                } else {
-                    $('.nav-item.was-wir-tun').removeClass('steva');
-                }
-                if ($(this).position().top <= windscroll) {
-                    $('.nav-item:not(.sidemenu-list-item).active').removeClass('active');
-                    $('.nav-item:not(.sidemenu-list-item)').eq(i).addClass('active');
-                }
-            });
         }
 
         // iterating through every section
@@ -106,35 +95,35 @@ $(document).ready(function () {
         $('html').removeClass('no-scroll-y');
 
         if ($(this).hasClass('was-wir-tun')) {
-            $('html, body').animate({scrollTop: $('#was-wir-tun').offset().top - headerHeightOnClickNavigation}, lAnimationDuration);
+            $('html, body').animate({scrollTop: Math.round($('#was-wir-tun').offset().top - headerHeightOnClickNavigation)}, lAnimationDuration);
             setTimeout( () => {$('#was-wir-tun').addClass('in-view');}, lAnimationDuration);
         }
         if ($(this).hasClass('markenidee')) {
-            $('html, body').animate({scrollTop: $('#markenidee').offset().top - headerHeightOnClickNavigation}, lAnimationDuration);
+            $('html, body').animate({scrollTop: Math.round($('#markenidee').offset().top - headerHeightOnClickNavigation)}, lAnimationDuration);
             setTimeout(() => {$('#markenidee').addClass('in-view');}, lAnimationDuration);
         }
         if ($(this).hasClass('produkte')) {
-            $('html, body').animate({scrollTop: $('#produkte').offset().top - headerHeightOnClickNavigation}, lAnimationDuration);
+            $('html, body').animate({scrollTop: Math.round($('#produkte').offset().top - headerHeightOnClickNavigation)}, lAnimationDuration);
             setTimeout(() => {$('#produkte').addClass('in-view');}, lAnimationDuration);
         }
         if ($(this).hasClass('mission')) {
-            $('html, body').animate({scrollTop: $('#mission').offset().top - headerHeightOnClickNavigation}, lAnimationDuration);
+            $('html, body').animate({scrollTop: Math.round($('#mission').offset().top - headerHeightOnClickNavigation)}, lAnimationDuration);
             setTimeout(() => {$('#mission').addClass('in-view');}, lAnimationDuration);
         }
         if ($(this).hasClass('hintergrund')) {
-            $('html, body').animate({scrollTop: $('#hintergrund').offset().top - headerHeightOnClickNavigation}, lAnimationDuration);
+            $('html, body').animate({scrollTop: Math.round($('#hintergrund').offset().top - headerHeightOnClickNavigation)}, lAnimationDuration);
             setTimeout(() => {$('#hintergrund').addClass('in-view');}, lAnimationDuration);
         }
         if ($(this).hasClass('wertschopfung')) {
-            $('html, body').animate({scrollTop: $('#wertschopfung').offset().top - headerHeightOnClickNavigation}, lAnimationDuration);
+            $('html, body').animate({scrollTop: Math.round($('#wertschopfung').offset().top - headerHeightOnClickNavigation)}, lAnimationDuration);
             setTimeout(() => {$('#wertschopfung').addClass('in-view');}, lAnimationDuration);
         }
         if ($(this).hasClass('wir')) {
-            $('html, body').animate({scrollTop: $('#wir').offset().top - headerHeightOnClickNavigation}, lAnimationDuration);
+            $('html, body').animate({scrollTop: Math.round($('#wir').offset().top - headerHeightOnClickNavigation)}, lAnimationDuration);
             setTimeout(() => {$('#wir').addClass('in-view');}, lAnimationDuration);
         }
         if ($(this).hasClass('kontakt')) {
-            $('html, body').animate({scrollTop: $('#kontakt').offset().top - headerHeightOnClickNavigation}, lAnimationDuration);
+            $('html, body').animate({scrollTop: Math.round($('#kontakt').offset().top - headerHeightOnClickNavigation + 1)}, lAnimationDuration); // fix for not setting active cls on kontakt nav item
             setTimeout(() => {$('#kontakt').addClass('in-view');}, lAnimationDuration);
         }
     });
@@ -174,8 +163,6 @@ $(document).ready(function () {
         checkPosition();
     });
 
-    checkPosition();
-
     // scroll to top of the page
     $('#to-top').on('click', function () {
         $('html, body').animate({scrollTop: $('#hero').offset().top}, lAnimationDuration);
@@ -189,3 +176,61 @@ $(document).ready(function () {
     }
     !isMobile ? $('html').removeClass('on-mobile-device') : $('html').addClass('on-mobile-device');
 });
+
+var BrowserDetect = {
+    init: function () {
+        this.browser = this.searchString(this.dataBrowser) || "Other";
+        this.version = this.searchVersion(navigator.userAgent) || this.searchVersion(navigator.appVersion) || "Unknown";
+    },
+    searchString: function (data) {
+        for (var i = 0; i < data.length; i++) {
+            var dataString = data[i].string;
+            this.versionSearchString = data[i].subString;
+
+            if (dataString.indexOf(data[i].subString) !== -1) {
+                return data[i].identity;
+            }
+        }
+    },
+    searchVersion: function (dataString) {
+        var index = dataString.indexOf(this.versionSearchString);
+        if (index === -1) {
+            return;
+        }
+
+        var rv = dataString.indexOf("rv:");
+        if (this.versionSearchString === "Trident" && rv !== -1) {
+            return parseFloat(dataString.substring(rv + 3));
+        } else {
+            return parseFloat(dataString.substring(index + this.versionSearchString.length + 1));
+        }
+    },
+
+    dataBrowser: [
+        {string: navigator.userAgent, subString: "Edge", identity: "MS Edge"},
+        {string: navigator.userAgent, subString: "MSIE", identity: "Explorer"},
+        {string: navigator.userAgent, subString: "Trident", identity: "Explorer"},
+        {string: navigator.userAgent, subString: "Firefox", identity: "Firefox"},
+        {string: navigator.userAgent, subString: "Opera", identity: "Opera"},
+        {string: navigator.userAgent, subString: "OPR", identity: "Opera"},
+        {string: navigator.userAgent, subString: "Chrome", identity: "Chrome"},
+        {string: navigator.userAgent, subString: "Safari", identity: "Safari"}
+    ]
+};
+
+BrowserDetect.init();
+
+var bv= BrowserDetect.browser;
+
+if( bv == "Chrome"){
+    $("body").addClass("chrome");
+}
+else if(bv == "MS Edge"){
+    $("body").addClass("edge");
+}
+else if(bv == "Explorer"){
+    $("body").addClass("ie");
+}
+else if(bv == "Firefox"){
+    $("body").addClass("firefox");
+}

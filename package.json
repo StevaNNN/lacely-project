@@ -32,10 +32,11 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
+    "gh-pages": "^2.2.0",
     "jquery": "^3.5.1",
     "jquery-appear-original": "^0.6.2",
+    "modernizr": "^3.11.4",
     "serve": "^11.3.1",
-    "slick-carousel": "^1.8.1",
-    "gh-pages": "^2.2.0"
+    "slick-carousel": "^1.8.1"
   }
 }

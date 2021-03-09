@@ -67,7 +67,7 @@ path#middle {
     top: -15px;
     left: 19px;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
         height: $header-reduced-height;
         top: -40px;
     }
