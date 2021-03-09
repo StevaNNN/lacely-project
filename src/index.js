@@ -1,6 +1,7 @@
 // import slick carousel
 import 'slick-carousel';
 
+
 // site config
 let headerHeight = 140;
 let headerHeightOnClickNavigation = 80;
