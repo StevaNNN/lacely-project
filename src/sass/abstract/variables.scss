@@ -1,6 +1,6 @@
 /// App prefix
 /// @group op-vars
-$prefix: 'op-';
+$prefix: "op-";
 /// App image path
 /// @group op-vars
 $img-path: "assets/img/";
@@ -12,34 +12,34 @@ $fonts-path: "assets/fonts/";
 $icon-path: "assets/icons/";
 /// App font size xs
 /// @group op-vars
-$font-size-xs:          1rem;
+$font-size-xs: 1rem;
 /// App font size sm
 /// @group op-vars
-$font-size-sm:          1.2rem;
+$font-size-sm: 1.2rem;
 /// App font size
 /// @group op-vars
-$font-size:             1.4rem;
+$font-size: 1.4rem;
 /// App font size m
 /// @group op-vars
-$font-size-m:           1.6rem;
+$font-size-m: 1.6rem;
 /// App font size l
 /// @group op-vars
-$font-size-l:           1.8rem;
+$font-size-l: 1.8rem;
 /// App font size xl
 /// @group op-vars
-$font-size-lg:        2rem;
+$font-size-lg: 2rem;
 /// App font font family light
 /// @group op-vars
-$font-family-light: 'roboto-thin';
+$font-family-light: "roboto-thin";
 /// App font font family regular
 /// @group op-vars
-$font-family: 'roboto-regular';
+$font-family: "roboto-regular";
 /// App font font family medium
 /// @group op-vars
-$font-family-medium: 'roboto-medium';
+$font-family-medium: "roboto-medium";
 /// App secondary font family
 /// @group op-vars
-$font-family-serif: 'custom-serif';
+$font-family-serif: "custom-serif";
 /// App font weight normal
 /// @group op-vars
 $font-weight: 400;
@@ -51,13 +51,13 @@ $font-weight-semibold: 600;
 $font-weight-bold: 700;
 /// App accent color
 /// @group op-vars
-$accent: #53654F;// #52644F
+$accent: #53654f; // #52644F
 /// App accent color
 /// @group op-vars
-$accent-light: #76B728;
+$accent-light: #76b728;
 /// App secondary color
 /// @group op-vars
-$secondary: #64A4B5;
+$secondary: #64a4b5;
 /// App white color
 /// @group op-vars
 $white: #fff;
@@ -66,7 +66,7 @@ $white: #fff;
 $black: #000;
 /// App text color
 /// @group op-vars
-$color: #534F4B;
+$color: #534f4b;
 /// App text color light
 /// @group op-vars
 $color-light: #898887;
@@ -87,7 +87,7 @@ $header-height: 14rem;
 $header-reduced-height: 8rem;
 /// App accent color
 /// @group op-vars
-$border-radius: .4rem;
+$border-radius: 0.4rem;
 /// App animation duration
 /// @group op-vars
 $animation-duration: 250ms;

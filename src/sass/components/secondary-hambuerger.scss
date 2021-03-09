@@ -1,14 +1,15 @@
 svg {
-    width: 140px;
-    height: 90px;
     cursor: pointer;
+    height: 90px;
     transform: translate3d(0, 0, 0);
+    width: 140px;
     transition: all $animation-duration $animation-type;
 }
 
 path {
     fill: none;
-    transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+    transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+        stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
     stroke-width: 20px;
     stroke: #000000;
     border-radius: 16px;
@@ -51,11 +52,9 @@ path#middle {
     }
 }
 
-
-
 .navi-trigger .navi-icon::before,
 .navi-trigger .navi-icon:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     right: 0;

@@ -33,25 +33,33 @@ $(document).ready(function () {
     $(window).scroll(function () {
         const windscroll = $(window).scrollTop();
 
-        // setting active cls on header nav items while scrolling
-        if (windscroll >= (headerHeight * 2)) {
-            $('.section:not(.vision), .section:not(.wir)').each(function (i) {
-                if ($(this).position().top <= windscroll + headerHeight) {
-                    $('.nav-item:not(.sidemenu-list-item).active').removeClass('active');
-                    $('.nav-item:not(.sidemenu-list-item)').eq(i).addClass('active');
-                }
-            });
-        }
-
         // setting css classes to header and sections that inform them that header height is reduced or not
         if(windscroll >= heroSectionHeight) {
             headerHeight = headerHeightOnClickNavigation;
             $('.header').addClass('header-reduced');
             $('.section').addClass('header-reduced');
+            
         } else {
             headerHeight = 140;
             $('.header').removeClass('header-reduced');
             $('.section').removeClass('header-reduced');
+           
+        }
+
+        // setting active cls on header nav items while scrolling
+        if (windscroll > 0) {
+            console.log(windscroll)
+            $('.section:not(.vision)').each(function (i) {
+                if(windscroll >= (heroSectionHeight + 140)) {
+                    $('.nav-item.was-wir-tun').addClass('steva');
+                } else {
+                    $('.nav-item.was-wir-tun').removeClass('steva');
+                }
+                if ($(this).position().top <= windscroll) {
+                    $('.nav-item:not(.sidemenu-list-item).active').removeClass('active');
+                    $('.nav-item:not(.sidemenu-list-item)').eq(i).addClass('active');
+                }
+            });
         }
 
         // iterating through every section
@@ -93,8 +101,6 @@ $(document).ready(function () {
     // code responsible for navigation clicks
     $('.nav-item').click(function (e) {
         e.preventDefault();
-        $(this).siblings().removeClass('active');
-        $(this).addClass('active');
         $('.sidemenu-wrap').removeClass('shown');
         $('.navi-trigger').removeClass('cross');
         $('html').removeClass('no-scroll-y');
@@ -123,6 +129,10 @@ $(document).ready(function () {
             $('html, body').animate({scrollTop: $('#wertschopfung').offset().top - headerHeightOnClickNavigation}, lAnimationDuration);
             setTimeout(() => {$('#wertschopfung').addClass('in-view');}, lAnimationDuration);
         }
+        if ($(this).hasClass('wir')) {
+            $('html, body').animate({scrollTop: $('#wir').offset().top - headerHeightOnClickNavigation}, lAnimationDuration);
+            setTimeout(() => {$('#wir').addClass('in-view');}, lAnimationDuration);
+        }
         if ($(this).hasClass('kontakt')) {
             $('html, body').animate({scrollTop: $('#kontakt').offset().top - headerHeightOnClickNavigation}, lAnimationDuration);
             setTimeout(() => {$('#kontakt').addClass('in-view');}, lAnimationDuration);
@@ -132,12 +142,12 @@ $(document).ready(function () {
     // get start button listener
     $('.get-started').click(function () {
         $('.nav-item.hero').removeClass('active');
-        $('.nav-item.was-wir-tun').addClass('active');
         $('html, body').animate({scrollTop: $('#was-wir-tun').offset().top - headerHeightOnClickNavigation}, lAnimationDuration);
     });
 
     /// hamburger fancier menu click handler
-    $('.navi-trigger').click(function () {
+    $('.navi-trigger').click(function (e) {
+        e.preventDefault();
         if ($(this).hasClass('cross')) {
             $(this).removeClass('cross');
             $('.sidemenu-wrap').removeClass('shown');
@@ -149,7 +159,24 @@ $(document).ready(function () {
         }
     });
 
-    /// scroll to top of the page
+    /// handling removed scroll on html when side menu is opened and appears below 1024px
+    /// basicly just remove cls which is glued when user clicks to open side menu, side menu stays opened, and than go back to desktop size
+    const checkPosition = () => {
+        if (window.matchMedia('(min-width: 1024px)').matches) {
+            $('html').removeClass('no-scroll-y');
+            $('.navi-trigger').removeClass('cross');
+            $('.sidemenu-wrap').removeClass('shown');
+        }
+    }
+
+    // on resize handler for function above
+    $(window).on('resize', function(){
+        checkPosition();
+    });
+
+    checkPosition();
+
+    // scroll to top of the page
     $('#to-top').on('click', function () {
         $('html, body').animate({scrollTop: $('#hero').offset().top}, lAnimationDuration);
     });

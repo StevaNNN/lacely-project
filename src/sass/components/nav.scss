@@ -4,7 +4,7 @@
     align-items: center;
     padding-left: 10.4rem;
 
-    @media screen and (max-width: 1024px){
+    @media screen and (max-width: 1024px) {
         display: none;
     }
 }
@@ -35,9 +35,9 @@
     }
 
     &::after {
-        content: '';
+        content: "";
         bottom: 0;
-        height: .7rem;
+        height: 0.7rem;
         position: absolute;
         background: $accent;
         width: calc(100% - 3.6rem);
@@ -52,7 +52,6 @@
     }
 
     &.active {
-
         &:after {
             transform: scaleX(1);
         }
@@ -64,13 +63,12 @@
 }
 
 html:not(.on-mobile-device) {
-
     .nav-item {
-
-        &:hover {
-
-            &:after {
-                transform: scaleX(1);
+        &:not(.active) {
+            &:hover {
+                &:after {
+                    transform: scaleX(1);
+                }
             }
         }
     }

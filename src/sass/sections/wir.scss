@@ -1,69 +1,72 @@
 .section.wir {
-  .section-content {
-    margin-top: 10rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    .section-content {
+        margin-top: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
 
-    @media screen and (max-width: 1024px) {
-      flex-direction: column;
-    }
-  }
-
-  h4 {
-    font-family: $font-family-serif;
-    font-size: 2.4rem;
-    font-weight: normal;
-    text-align: center;
-    margin-bottom: 0;
-  }
-
-  p {
-    color: $color-light;
-    font-size: $font-size-l;
-    margin-bottom: 0;
-    margin-top: 1rem;
-    text-align: center;
-
-    &:last-of-type {
-      max-width: 80%;
-      margin: 1rem auto 0;
-    }
-  }
-
-  img {
-    max-width: 45rem;
-    height: auto;
-    object-fit: contain;
-
-    @media screen and (max-width: 500px) {
-      max-width: 100%;
-    }
-  }
-
-  .ceo {
-    max-width: 45rem;
-
-    @media screen and (max-width: 475px) {
-      max-width: 100%;
-      text-align: center;
+        @media screen and (max-width: 1024px) {
+            flex-direction: column;
+        }
     }
 
-    &:last-of-type {
-      @media screen and (max-width: 1024px) {
-        margin-top: 4rem;
-      }
+    h4 {
+        font-family: $font-family-serif;
+        font-size: 2.4rem;
+        font-weight: normal;
+        text-align: center;
+        margin-bottom: 0;
     }
-  }
 
-  .ceo-description {
-    letter-spacing: 0.1rem;
+    p {
+        color: $color-light;
+        font-size: $font-size-l;
+        margin-bottom: 0;
+        margin-top: 1rem;
+        text-align: center;
 
-    h3 {
-      color: $accent-light;
-      font-size: 2.4rem;
-      font-family: $font-family-serif;
+        &:last-of-type {
+            max-width: 80%;
+            margin: 1rem auto 0;
+        }
     }
-  }
+
+    img {
+        max-width: 45rem;
+        height: auto;
+        object-fit: contain;
+
+        @media screen and (max-width: 500px) {
+            max-width: 100%;
+        }
+    }
+
+    .ceo {
+        max-width: 45rem;
+
+        @media screen and (max-width: 1024px) {
+            text-align: center;
+        }
+
+        @media screen and (max-width: 475px) {
+            max-width: 100%;
+        }
+
+        &:last-of-type {
+            @media screen and (max-width: 1024px) {
+                margin-top: 4rem;
+            }
+        }
+    }
+
+    .ceo-description {
+        letter-spacing: 0.1rem;
+
+        h3 {
+            color: $accent-light;
+            font-size: 2.4rem;
+            font-family: $font-family-serif;
+        }
+    }
 }
