@@ -1,11 +1,3 @@
-body:not(.firefox),
-body:not(.chrome) {
-    .intro-pic {
-        object-fit: initial !important;
-        height: intrinsic !important;
-    }
-}
-
 .section.hero {
     position: relative;
     background-image: url("#{$img-path}intro/Keyvisual.jpg");
@@ -21,24 +13,28 @@ body:not(.chrome) {
 
     img {
         object-fit: contain;
-        max-width: 130%;
+        max-width: 100%;
         height: auto;
         z-index: -1;
         display: none;
         position: relative;
 
         .safari & {
-            object-fit: initial;
+
         }
 
         @media screen and (max-width: 1280px) {
             display: initial;
-            top: $header-height;
+            margin-top: $header-height;
         }
 
         @media screen and (max-width: 1024px) {
-            top: $header-reduced-height;
+            margin-top: $header-reduced-height;
         }
+    }
+
+    figure {
+        margin: 0;
     }
 
     > div {

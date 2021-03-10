@@ -17,6 +17,10 @@
         font-weight: normal;
         text-align: center;
         margin-bottom: 0;
+
+        @media screen and (max-width: 768px) {
+            font-size: 2rem;
+        }
     }
 
     p {
@@ -25,6 +29,10 @@
         margin-bottom: 0;
         margin-top: 1rem;
         text-align: center;
+
+        @media screen and (max-width: 768px) {
+            font-size: $font-size-m;
+        }
 
         &:last-of-type {
             max-width: 80%;
@@ -67,6 +75,10 @@
             color: $accent-light;
             font-size: 2.4rem;
             font-family: $font-family-serif;
+
+            @media screen and (max-width: 768px) {
+                font-size: 2rem;
+            }
         }
     }
 }

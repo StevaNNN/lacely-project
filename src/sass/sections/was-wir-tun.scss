@@ -17,11 +17,15 @@
         text-align: center;
         align-items: center;
 
+        @media screen and (max-width: 1280px) {
+            top: -11rem;
+        }
+
         @media screen and (max-width: 768px) {
             width: 13.8rem;
             height: 13.8rem;
             right: 3.5rem;
-            top: -6.9rem;
+            top: -7.5rem;
         }
 
         @media screen and (max-width: 410px) {

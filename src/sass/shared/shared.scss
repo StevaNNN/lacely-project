@@ -2,6 +2,7 @@
 html {
     font-size: 62.5%;
     overflow-x: hidden;
+    text-rendering: optimizeLegibility;
 }
 
 body {
@@ -14,6 +15,13 @@ body {
     flex-direction: column;
     position: relative;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+
+    &.chrome {
+        image-rendering: -webkit-optimize-contrast;
+    }
 }
 
 a {
