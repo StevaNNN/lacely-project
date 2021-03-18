@@ -101,8 +101,10 @@ module.exports = {
             filename: "./quick-fix.html" // where to store html with plugin
         }),
         new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery'
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery'",
+            "window.$": "jquery"
         })
     ],
     output: {

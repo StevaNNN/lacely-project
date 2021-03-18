@@ -1,0 +1,75 @@
+#modal-wrapper{
+    background-color: rgba($black, .7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 101;
+}
+.ui-dialog {
+    background-color: white;
+    border-radius: $border-radius * 4;
+    box-shadow: 0 2px 10px rgba($black, .4);
+    z-index: 101;
+    height: 50rem !important;
+    width: 50rem !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    outline: none;
+    overflow: hidden;
+
+    @media screen and ( max-width: 501px) {
+        height: calc(100% - 2rem) !important;
+        width: calc(100% - 2rem) !important;
+    }
+
+    @media screen and ( max-height: 501px) {
+        height: calc(100% - 2rem) !important;
+        width: calc(100% - 2rem) !important;
+    }
+}
+
+.ui-dialog-titlebar {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.ui-dialog-content {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    height: calc(100% - 6.7rem) !important;
+    overflow-y: auto;
+
+    p,
+    h6 {
+        margin: 0;
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+}
+
+.ui-dialog-titlebar-close {
+    background-color: transparent;
+    border: 0;
+    text-indent: -1000000px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url("#{$icon-path}close.svg");
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.ui-dialog-title {
+    font-size: $font-size-l;
+    font-family: $font-family-medium;
+}

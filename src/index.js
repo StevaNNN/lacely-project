@@ -1,6 +1,6 @@
 // import slick carousel
 import 'slick-carousel';
-
+require('jquery-ui/ui/widgets/dialog');
 // site config
 let headerHeight = 140;
 let headerHeightOnClickNavigation = 80;
@@ -8,12 +8,15 @@ let lAnimationDuration = 300;
 let animationFlagClsRationPerSection = 2.3;
 let twentyNumber = 0;
 let eightyNumber = 0;
+let dialogOpened = false;
 
 // function responsible for flagging if element(section) is in view
 const isFullySeen = el =>
     el && typeof el.getBoundingClientRect === 'function'
     && el.getBoundingClientRect()['top'] +
     window.scrollY + (window.innerHeight / animationFlagClsRationPerSection - headerHeight) <= window.innerHeight + window.scrollY;
+
+dialogOpened = $('#dialog').dialog('isOpen') === true;
 
 // on page ready
 $(document).ready(function () {
@@ -35,7 +38,6 @@ $(document).ready(function () {
         // setting active cls on header nav items while scrolling
         $('.section:not(.vision)').each(function (i) {
             if (Math.round($(this).position().top) <= windscroll + headerHeightOnClickNavigation) {
-                console.log($(this).position().top)
                 $('.nav-item:not(.sidemenu-list-item).active').removeClass('active');
                 $('.nav-item:not(.sidemenu-list-item)').eq(i).addClass('active');
             }
@@ -151,7 +153,7 @@ $(document).ready(function () {
     /// handling removed scroll on html when side menu is opened and appears below 1024px
     /// basicly just remove cls which is glued when user clicks to open side menu, side menu stays opened, and than go back to desktop size
     const checkPosition = () => {
-        if (window.matchMedia('(min-width: 1024px)').matches) {
+        if (window.matchMedia('(min-width: 1024px)').matches && !$('#dialog').dialog("isOpen")) {
             $('html').removeClass('no-scroll-y');
             $('.navi-trigger').removeClass('cross');
             $('.sidemenu-wrap').removeClass('shown');
@@ -175,6 +177,28 @@ $(document).ready(function () {
         isMobile = true;
     }
     !isMobile ? $('html').removeClass('on-mobile-device') : $('html').addClass('on-mobile-device');
+
+    // hide the dialog and wrapper firstly
+    $('#dialog').hide();
+    $('#modal-wrapper').hide();
+
+    // on click show dialog
+    $('.impressumDaten').on('click', function () {
+        $('html').addClass('no-scroll-y');
+        $('#modal-wrapper').show();
+        $('#dialog').dialog({
+            draggable: false,
+            resizable: false,
+            appendTo: "#modal-wrapper",
+            // on close remove no-scroll class
+            close: function () {
+                $('html').removeClass('no-scroll-y');
+                $('#modal-wrapper').hide();
+            }
+        });
+    });
+
+
 });
 
 var BrowserDetect = {
